@@ -1,4 +1,4 @@
-# CORINTHIANS ARCHIVE STUDIES V2
+# CORINTHIANS ARCHIVE STUDIES
 
 Aplicação web desenvolvida com Flask para funcionar como um catálogo digital conceitual inspirado em archive fashion.
 
@@ -20,7 +20,7 @@ https://corinthians-archive-studies-v2.onrender.com
 
 ## Sobre o projeto
 
-O CORINTHIANS ARCHIVE STUDIES V2 surgiu como uma evolução de uma aplicação simples de gerenciamento de produtos.
+O CORINTHIANS ARCHIVE STUDIES surgiu como uma evolução de uma aplicação simples de gerenciamento de produtos.
 
 A proposta atual deixou de ser apenas uma loja e passou a funcionar como um arquivo digital experimental, combinando desenvolvimento web, organização de dados e uma direção visual inspirada em archive fashion e estética editorial.
 
