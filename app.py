@@ -14,6 +14,7 @@ from flask import (
 
 from functools import wraps
 from dotenv import load_dotenv
+from ml.recommender import recomendar_produtos
 
 import psycopg2
 import unicodedata
@@ -260,22 +261,37 @@ def produto(id):
         """
         SELECT *
         FROM produtos
-        WHERE id = %s
-        """,
-        (id,)
+        ORDER BY id ASC
+        """
     )
 
-    produto = cursor.fetchone()
+    produtos = cursor.fetchall()
 
     cursor.close()
     conexao.close()
 
+    produto = next(
+        (
+            produto
+            for produto in produtos
+            if produto[0] == id
+        ),
+        None
+    )
+
     if produto is None:
         return redirect('/')
 
+    relacionados = recomendar_produtos(
+        produtos,
+        id,
+        limite=3
+    )
+
     return render_template(
         'produto.html',
-        produto=produto
+        produto=produto,
+        relacionados=relacionados
     )
 
 
